@@ -14,6 +14,9 @@ This module contains the implementation of hand tracking functionality using the
 2. virtualkeyboard.py
 The virtualkeyboard.py module implements the virtual keyboard interface using OpenCV. It utilizes the hand tracking module to enable users to interact with the keyboard using hand gestures.
 
+3. Boxes.py
+This module has base functions to create buttons and check if the index finger is hovering over a button.
+
 ## Requirements
 1. Python 3.8
 2. OpenCV
@@ -31,7 +34,7 @@ pip install opencv-python mediapipe
 python virtualkeyboard.py
 ```
 2. Ensure your webcam is connected and properly configured.
-3. Interact with the virtual keyboard by using your index finger to point and select, and both your index finger and middle finger close up to perform a button click.
+3. Interact with the virtual keyboard by using your index finger to point and select, and both your index finger and thumb finger close up to perform a button click.
 
 
 
