@@ -9,6 +9,7 @@ class RectBox:
         self.color = color
         self.text = text
         self.alpha = alpha
+
     def drawRect(self, img, text_color=(255, 255, 255), fontStyle=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.8, thickness=2):
         alpha = self.alpha
         bg_roi = img[self.y: self.y + self.h, self.x: self.x + self.w]
@@ -23,5 +24,4 @@ class RectBox:
         cv2.putText(img, self.text, text_pos, fontStyle, fontScale, text_color, thickness)
 
     def onButton(self, x, y):
-        return ((self.x + self.w > x > self.x) and
-                (self.y < y < self.y + self.h))
+        return ((self.x + self.w > x > self.x) and (self.y < y < self.y + self.h))
