@@ -10,8 +10,6 @@ cap.set(3, wCam)
 cap.set(4, hCam)
 detector = htm.HandDetector(detectionCon=0.8)
 
-
-# Creating the keyboard keys
 keys = list("QWERTYUIOPASDFGHJKLZXCVBNM")
 
 w, h = 100, 80
@@ -58,13 +56,10 @@ while True:
         for button in buttonList:
             x, y = button.x, button.y
             w, h = button.w, button.h
-            # fingers = detector.fingersUp()
-            # print(lmList[8][1])
             if button.onButton(lmList[8][1], lmList[8][2]):
                 cv2.rectangle(img, (button.x, button.y), (button.x + button.w, button.y + button.h), (150, 78, 6), cv2.FILLED)
                 cv2.putText(img, button.text, (x + 35, y + 45), cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 255), 2)
                 l, _, _ = detector.findDistance(8, 4, img, draw=False)
-                # print(l)
 
                 if l < 32 and not coolingCounter:
                     coolingCounter = 15
